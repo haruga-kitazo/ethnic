@@ -11,10 +11,10 @@
         {% for restaurant in restaurants %}
             <li>
                 <strong>{{ restaurant.name }}</strong><br>
-                Country: {{ restaurant.country_id }}<br>
-                Genre: {{ restaurant.genre_id }}<br>
+                Country: {{ restaurant.country.name }}<br> <!-- 外部キーの関連オブジェクトの名前を表示 -->
+                Genre: {{ restaurant.genre.name }}<br> <!-- 外部キーの関連オブジェクトの名前を表示 -->
                 Nearest Station: {{ restaurant.nearest_station }}<br>
-                Price Range: {{ restaurant.price_range }}<br>
+                Price Range: {{ restaurant.price_range.min_price }} - {{ restaurant.price_range.max_price }}<br> <!-- 価格帯を表示 -->
                 <a href="{{ restaurant.google_map_url }}" target="_blank">Google Map</a>
             </li>
         {% endfor %}
