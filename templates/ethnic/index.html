@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Index</title>
+</head>
+<body>
+    <h1>Restaurants</h1>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>
+                <strong>{{ restaurant.name }}</strong><br>
+                Country: {{ restaurant.country_id }}<br>
+                Genre: {{ restaurant.genre_id }}<br>
+                Nearest Station: {{ restaurant.nearest_station }}<br>
+                Price Range: {{ restaurant.price_range }}<br>
+                <a href="{{ restaurant.google_map_url }}" target="_blank">Google Map</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
